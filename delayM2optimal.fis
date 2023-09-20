@@ -1,0 +1,57 @@
+[System]
+Name='delayM2'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=14
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='e'
+Range=[-3 3]
+NumMFs=7
+MF1='NB':'trimf',[-4 -3 -2]
+MF2='Z':'trimf',[-1 0 1]
+MF3='PM':'trimf',[1 2 3]
+MF4='NM':'trimf',[-3 -2 -1]
+MF5='NS':'trimf',[-2 -1 0]
+MF6='PS':'trimf',[0 1 2]
+MF7='PB':'trimf',[2 3 4]
+
+[Input2]
+Name='ec'
+Range=[-7 7]
+NumMFs=2
+MF1='N':'trapmf',[-12 -10 -7 7]
+MF2='P':'trapmf',[-7 7 10 12]
+
+[Output1]
+Name='u'
+Range=[-0.4 0.4]
+NumMFs=5
+MF1='NB':'trimf',[-0.6 -0.4 -0.2]
+MF2='Z':'trimf',[-0.2 0 0.2]
+MF3='PB':'trimf',[0.2 0.4 0.6]
+MF4='NM':'trimf',[-0.4 -0.2 0]
+MF5='PM':'trimf',[0 0.2 0.4]
+
+[Rules]
+7 2, 4 (1) : 1
+3 2, 4 (1) : 1
+6 2, 2 (1) : 1
+2 2, 2 (1) : 1
+5 2, 2 (1) : 1
+4 2, 4 (1) : 1
+1 2, 5 (1) : 1
+7 1, 2 (1) : 1
+3 1, 2 (1) : 1
+6 1, 5 (1) : 1
+2 1, 2 (1) : 1
+5 1, 4 (1) : 1
+4 1, 4 (1) : 1
+1 1, 3 (1) : 1
